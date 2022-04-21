@@ -1,0 +1,85 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Rooms</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- some fancy stuff -->
+    <div>
+        <button class="setting btn" onclick="changeBg()"> Next </button>
+    </div>
+    <!-- Chat Room & Todo List section -->
+    <div class="chatroom-S">
+        <!-- Chatroom -->
+        <div class="chatRooms">
+            <button id="general" class="btn" onclick="setRoom(this)"> #general </button>
+            <button id="work" class="btn" onclick="setRoom(this)">#work</button>
+            <button id="play" class="btn" onclick="setRoom(this)">#play</button>
+        </div>
+        <div class="chatPanel">
+            <div class="chatDisplay">
+                <ul id="messagesOnDisplay">
+                    <!-- <li> <span class="senderName">${data.user}:</span> 
+                        <span>${data.msg}</span>
+                        <div class="chattime">${time}</div>
+                        </li>-->
+                </ul>
+            </div>
+            <form id="chatForm">
+                <input class="chatSendI" type="text" id="chatTxt" placeholder="Tell them here"/>
+                <button class="chatSendB btn" onclick="sendChat()">Send</button>
+            </form>
+        </div>
+        
+        <!-- Todo List -->
+        <div class="todo-S">
+            <div class="header">
+                <img src="icons/user.png" alt="Profile Pic">
+                <p id="usernameDisplay" onclick="loginAcc()"> mario </p>
+                <img src="icons/crypto.png" alt="rating">
+                <p>102</p>
+            </div>
+            <div class="changeAcc">
+                <p><b>Log In:</b></p>
+                <form id="loginForm">
+                    <input type="text" name="username" class="loginInput" placeholder="Name"/>
+                    <input type="password" name="password" class="loginInput" placeholder="Password"/>
+                    <button class="loginBtn btn">Confirm</button>
+                </form>
+            </div>
+            <div class="todoList">
+                <p> <b>To Do List </b></p>
+                <ul>
+                    <li>Get up</li>
+                    <li>Dress up</li>
+                    <li>Put a little Makeup</li>
+                </ul>
+            </div>
+        </div>
+    </div> 
+
+    <!-- Study Panel section -->
+
+    <!-- Scripts -->
+    <script src="http://cdn.date-fns.org/v1.9.0/date_fns.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-firestore.js"></script>
+    <script>
+        // Initializing Firebase
+        var config = {
+            apiKey: "AIzaSyC_vnPbQufSqTAueKFWoLUqi_ODRUNUmOk",
+            authDomain: "blackjackdata-sbac.firebaseapp.com",
+            projectId: "blackjackdata-sbac",
+            storageBucket: "blackjackdata-sbac.appspot.com",
+            messagingSenderId: "197959944175",
+            appId: "1:197959944175:web:2bec95f985755960ac181a"
+            };
+        firebase.initializeApp(config);
+        const db = firebase.firestore();  
+    </script>
+    <script src="ChatRoom.js"></script>
+</body>
+</html>

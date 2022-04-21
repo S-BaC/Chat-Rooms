@@ -1,0 +1,178 @@
+/* 0. Base */
+
+body{
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    background-color: whitesmoke;
+    margin:50px;
+    background-image: url('photos/bg0.jpg');
+    background-size: cover;
+}
+
+/* A. FOR DESKTOP */
+
+/* Fancy Things */
+.setting{
+    position:absolute;
+    bottom:50px;
+    right:50px;
+    height:70px;
+    width: 70px;
+    border-radius: 50%;
+    border:2px dotted #aaa;
+    background-color: transparent;
+}
+/* 1. Chat Room section */
+
+/* 1.1. buttons */
+.btn:hover{
+    cursor: pointer;
+    background-color: rgb(214, 151, 33);
+    color:white;
+}
+.btnClicked{
+    background-color: whitesmoke !important;
+    color:black !important;
+    border: 1px solid orange !important;
+}
+
+/* 1.2. chat INPUT */
+.chatroom-S{
+    min-width:800px;
+    display:flex;
+    gap:20px;
+}
+.chatRooms{
+    flex:0.3 1 auto;
+    display:flex;
+    flex-direction: column;
+}
+.chatRooms button{
+    border:none;
+    padding:15px;
+    margin:5px;
+    background-color: teal;
+    color:white;
+    border-radius: 10px;
+    font-size: 0.7em;
+}
+.chatPanel{
+    max-width: 60%;
+    display:flex;
+    flex-direction: column;
+    flex:1 1 auto;
+}
+#chatForm{
+    bottom:0px;
+    height:30px;
+    flex: 1 1 auto;
+    border:none;
+    border-top: 1px solid black;
+    padding-top: 10px;
+    display:flex;
+    gap:10px;
+}
+.chatSendI{
+    flex: 1 1 auto;
+}
+.chatSendB{
+    flex: 0.5 1 auto;
+    background-color: teal;
+    color:white;
+}
+.chatSendI, .chatSendB{
+    border:2px dotted teal;
+    height:30px;
+}
+
+/* 1.3. chat DISPLAY */
+#messagesOnDisplay{
+    list-style-type: none;
+    padding:0px;
+    margin-top:10px;
+}
+.chatDisplay{
+    /* height:150px; */
+    border: 2px solid teal;
+    border-radius: 10px;
+    padding:10px 10px 0px 10px;
+    overflow-y:scroll;
+}
+
+.chatDisplay li{
+    margin-bottom: 10px;
+}
+.senderName{
+    color:teal;
+}
+.chattime{
+    font-weight: lighter;
+    font-size: 0.75em;
+}
+
+/* 2. Todo List section */
+
+.todo-S{
+    max-width: 350px;
+    margin-right: 100px;
+    flex: 0.3 1 auto;
+    display:flex;
+    flex-direction: column;
+    gap:20px;
+}
+
+/* 2.1. Profile */
+.header, .todoList, .changeAcc{
+    padding:5px 20px;
+    border:2px solid orange;
+    border-radius: 10px;
+}
+.header{
+    display:flex;
+    gap:10px;
+    align-items: center;
+}
+.header img{
+    width:20px;
+    height:20px;
+}
+.header p:hover{
+    cursor: pointer;
+}
+.changeAcc{
+    display:none;
+}
+.loginBtn{
+    margin:5px;
+    width:100%;
+    padding:5px;
+    border:none;
+}
+#loginForm input{
+    border:1px dotted orange;
+    margin:5px;
+    padding:5px;
+    width:100%;
+}
+
+/* 2.2. Todo List */
+.todoList li{
+    font-size: 0.8em;
+}
+
+
+/* 3. Study Panel section */
+
+/* B. FOR MOBILE PHONES */
+@media screen and (min-width:1500px){
+    body{
+        font-size: 35px;
+    }
+    #messagesOnDisplay{
+        column-count: 2;
+    }
+    .chatSendI, .chatSendB{
+        height:50px;
+        font-size: 30px;
+    }
+}
